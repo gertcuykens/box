@@ -1,6 +1,7 @@
 name: box
 run-name: ${{ github.actor }} is testing
 on: [workflow_dispatch]
+
 jobs:
   box:
     runs-on: ubuntu-latest
@@ -8,6 +9,6 @@ jobs:
     - id: box
       uses: gertcuykens/box@main
       with:
-        host: 'localhost'
+        msg: 'hello'
     - run: |
         echo "msg: ${{ steps.box.outputs.msg }}"
