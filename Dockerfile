@@ -1,9 +1,9 @@
 FROM debian:latest
-WORKDIR root
 ENV CLICOLOR=1
 ENV PYTHONNOUSERSITE=1
 ENV VISUAL="vim"
 ENV EDITOR="vim"
+WORKDIR root
 COPY .zshrc .zshrc
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive \
