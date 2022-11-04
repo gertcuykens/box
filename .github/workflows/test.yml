@@ -3,8 +3,8 @@ run-name: ${{ github.actor }} is testing
 on:
   workflow_dispatch:
     inputs:
-      key:
-        description: 'Key environment variable'
+      server:
+        description: 'server'
         type: environment
         required: true
 
@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "key: $KEY"
+          echo "server: $SERVER"
         env:
-          KEY: ${{ inputs.key }}
+          SERVER: ${{ inputs.server }}
