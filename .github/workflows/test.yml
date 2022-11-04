@@ -7,12 +7,21 @@ on:
         description: 'server'
         type: environment
         required: true
+      host:
+        description: "SSH hostname."
+        required: false
+        default: "localhost"
+      user:
+        description: "SSH username."
+        required: false
+        default: "root"
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
     - env:
-        SERVER: ${{ inputs.server }}
+        CMD: ssh ${{ inputs.user }}@${{ inputs.host }} date
       run: |
-        echo "server: $SERVER"
+        echo "$CMD"
+        eval "$CMD"
