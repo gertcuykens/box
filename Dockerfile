@@ -4,8 +4,11 @@ RUN apt-get update \
     apt-get install --no-install-recommends --assume-yes \
     ca-certificates openssh-client zsh git vim rsync curl python3
 WORKDIR root
-COPY .zshrc .zshrc
-COPY .zshenv .zshenv
+ENV CLICOLOR=1
+ENV PYTHONNOUSERSITE=1
+ENV VISUAL="vim"
+ENV EDITOR="vim"
+COPY .zshrc
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh-autosuggestions
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh-syntax-highlighting
 RUN git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.config/zsh-history-substring-search
