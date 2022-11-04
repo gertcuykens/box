@@ -8,3 +8,4 @@ jobs:
     - uses: gertcuykens/box@main
       with:
         host: 'localhost'
+      run: echo "msg:  ${{ outputs.msg }}"

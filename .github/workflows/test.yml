@@ -12,7 +12,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "server: $SERVER"
-      env:
+    - env:
         SERVER: ${{ inputs.server }}
+      run: echo "server: $SERVER"
+
