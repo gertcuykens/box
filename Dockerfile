@@ -1,11 +1,11 @@
 FROM debian:latest
+WORKDIR root
+COPY .zshrc .zshrc
+COPY action.sh action.sh
 ENV CLICOLOR=1
 ENV PYTHONNOUSERSITE=1
 ENV VISUAL="vim"
 ENV EDITOR="vim"
-WORKDIR root
-COPY .zshrc .zshrc
-COPY action.sh action.sh
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install --no-install-recommends --assume-yes \
     ca-certificates openssh-client zsh git vim rsync curl python3
