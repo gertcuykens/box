@@ -1,4 +1,4 @@
-name: test
+name: box
 run-name: ${{ github.actor }} is testing
 on: [workflow_dispatch]
 jobs:
