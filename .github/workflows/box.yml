@@ -5,8 +5,9 @@ jobs:
   box:
     runs-on: ubuntu-latest
     steps:
-    - uses: gertcuykens/box@main
+    - id: box
+      uses: gertcuykens/box@main
       with:
         host: 'localhost'
-      run: |
-        echo "msg: ${{ outputs.msg }}"
+    - run: |
+        echo "msg: ${{ steps.box.outputs.msg }}"
