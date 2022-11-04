@@ -2,4 +2,5 @@ uses: gertcuykens/box@main
 with:
   host: 'localhost'
 on: [workflow_dispatch]
-jobs: [box]
+jobs:
+  box:
