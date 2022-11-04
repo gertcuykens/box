@@ -5,8 +5,7 @@ ENV VISUAL="vim"
 ENV EDITOR="vim"
 WORKDIR root
 COPY .zshrc .zshrc
-RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install --no-install-recommends --assume-yes \
     ca-certificates openssh-client zsh git vim rsync curl python3
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh-autosuggestions
