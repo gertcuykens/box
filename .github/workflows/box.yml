@@ -3,6 +3,7 @@ run-name: ${{ github.actor }} is testing
 on: [workflow_dispatch]
 jobs:
   box:
+    runs-on: ubuntu-latest
     steps:
     - uses: gertcuykens/box@main
       with:
