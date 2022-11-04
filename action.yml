@@ -30,9 +30,15 @@ inputs:
     description: "SSH parameters."
     required: false
 
+outputs:
+  msg:
+    description: 'SSH message.'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
+# args:
+# - ${{ inputs.key }}
 
 branding:
   color: "green"
