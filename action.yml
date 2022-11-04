@@ -4,7 +4,7 @@ author: 'gert.cuykens@gmail.com'
 inputs:
   command:
     description: "SSH command."
-    required: true
+    required: false
   host:
     description: "SSH hostname."
     required: false

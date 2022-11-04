@@ -1,0 +1,3 @@
+uses: gertcuykens/box@main
+with:
+  host: 'localhost'
