@@ -2,7 +2,7 @@ name: test
 run-name: ${{ github.actor }} is testing
 on: [workflow_dispatch]
 jobs:
-  test:
+  box:
     steps:
     - uses: gertcuykens/box@main
       with:
