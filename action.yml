@@ -1,0 +1,39 @@
+name: 'box'
+description: 'Custom Debian Dockerfile'
+author: 'gert.cuykens@gmail.com'
+inputs:
+  command:
+    description: "SSH command."
+    required: true
+  host:
+    description: "SSH hostname."
+    required: false
+    default: "localhost"
+  user:
+    description: "SSH username."
+    required: false
+    default: "root"
+  port:
+    description: "SSH port."
+    required: false
+    default: "22"
+  key:
+    description: "SSH key."
+    required: false
+  keyfile:
+    description: "SSH keyfile."
+    required: false
+  pass:
+    description: "SSH password."
+    required: false
+  args:
+    description: "SSH parameters."
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  color: "green"
+  icon: "lock"
