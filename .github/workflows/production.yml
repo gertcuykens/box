@@ -7,5 +7,5 @@ jobs:
     environment: production
     steps:
     - run: |
-        echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_ed25519
+        ssh-add - <<< "${{secrets.SSH_PRIVATE_KEY}}"
         ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} date
