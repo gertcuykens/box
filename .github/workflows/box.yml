@@ -1,7 +1,6 @@
 name: box
 run-name: ${{ github.actor }}
 on: [workflow_dispatch]
-
 jobs:
   box:
     runs-on: ubuntu-latest
