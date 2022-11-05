@@ -1,12 +1,13 @@
 name: test
 run-name: ${{ github.actor }}
-on:
-  workflow_dispatch:
-    inputs:
-      host:
-        description: 'SSH environment'
-        type: environment
-        required: true
+on: [workflow_dispatch]
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       host:
+#         description: 'SSH environment'
+#         type: environment
+#         required: true
 
 jobs:
   test:
