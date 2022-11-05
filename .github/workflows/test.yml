@@ -4,21 +4,17 @@ on:
   workflow_dispatch:
     inputs:
       host:
-        description: 'SSH hostname.'
+        description: 'SSH environment'
         type: environment
         required: true
-      user:
-        description: "SSH username."
-        required: false
-        default: "root"
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    environment: production
     steps:
     - env:
-        CMD: ssh ${{inputs.user}}@${{inputs.host}} date
+        CMD: ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} date
       run: |
         echo "${{secrets.SSH_PRIVATE_KEY}}"
         echo "$CMD"
-        eval "$CMD"
