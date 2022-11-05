@@ -13,5 +13,6 @@ jobs:
     - run: |
         eval `ssh-agent -s`
         ssh-add - <<< "${{secrets.SSH_PRIVATE_KEY}}"
-        ssh-keyscan -H ${{secrets.SSH_HOST}} > ~/.ssh/known_hosts
+        mkdir ~/.ssh
+        ssh-keyscan -H ${{secrets.SSH_HOST}} >> ~/.ssh/known_hosts
         ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} ./action
