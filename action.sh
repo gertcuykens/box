@@ -9,3 +9,6 @@ echo "msg=world" >> $GITHUB_OUTPUT
 
 # ssh-keygen -t ed25519 -C "...@..."
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux
+
+# ssh-keyscan -H 192.168.0.1 >> ~/.ssh/known_hosts
+# ssh -o StrictHostKeyChecking=accept-new
