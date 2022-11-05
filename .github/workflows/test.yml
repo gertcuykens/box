@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-    - env:
-        CMD: ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} date
-      run: |
-        echo "${{secrets.SSH_PRIVATE_KEY}}"
-        echo "$CMD"
+    - run: |
+        echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_ed25519
+        ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} date
