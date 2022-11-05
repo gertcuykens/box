@@ -3,14 +3,10 @@ run-name: ${{ github.actor }}
 on:
   workflow_dispatch:
     inputs:
-      server:
-        description: 'server'
+      host:
+        description: 'SSH hostname.'
         type: environment
         required: true
-      host:
-        description: "SSH hostname."
-        required: false
-        default: "localhost"
       user:
         description: "SSH username."
         required: false
@@ -21,7 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - env:
-        CMD: ssh ${{ inputs.user }}@${{ inputs.host }} date
+        CMD: ssh ${{inputs.user}}@${{inputs.host}} date
       run: |
+        echo "${{secrets.SSH_PRIVATE_KEY}}"
         echo "$CMD"
         eval "$CMD"
