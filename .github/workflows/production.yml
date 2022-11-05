@@ -9,4 +9,5 @@ jobs:
     - run: |
         eval `ssh-agent -s`
         ssh-add - <<< "${{secrets.SSH_PRIVATE_KEY}}"
-        ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} date
+
+# ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} date
